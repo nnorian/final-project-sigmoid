@@ -17,11 +17,14 @@ def main():
 
 
 
+
+
 def get_user_expense():
     expense_name = input('what did u spent your money money for? ')
     expense_amount = float(input('enter expense amount: '))
     
 
+    
     expense_categories = [
 
     'food', 'graduation', 'studies', 'fun', 'weird stuff'
