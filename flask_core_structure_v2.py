@@ -15,7 +15,6 @@ class Expense:
         return f'<Expense: {self.name}, {self.category}, greens{self.amount:.2f}>'
 
 
-
 app = Flask(__name__)
 
 
