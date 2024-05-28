@@ -3,6 +3,8 @@ import calendar
 import datetime
 import csv
 
+
+
 class Expense:
     def __init__(self, name, category, amount) -> None:
         self.name = name
@@ -12,10 +14,17 @@ class Expense:
     def __repr__(self):
         return f'<Expense: {self.name}, {self.category}, greens{self.amount:.2f}>'
 
+
+
 app = Flask(__name__)
+
+
+
 
 EXPENSE_FILE_PATH = 'expenses.csv'
 BUDGET = 1000000000
+
+
 
 @app.route('/')
 def home():
@@ -36,6 +45,8 @@ def add_expense():
 
     expense_categories = ['food', 'graduation', 'studies', 'fun', 'weird stuff']
     return render_template('add_expense.html', categories=expense_categories)
+
+
 
 @app.route('/summary')
 def summary():
@@ -58,6 +69,7 @@ def summarize_expenses(expense_file_path, budget):
             )
             expenses.append(line_expense)
 
+    
     amount_by_category = {}
     for expense in expenses:
         key = expense.category
@@ -74,6 +86,7 @@ def summarize_expenses(expense_file_path, budget):
     remaining_days = days_in_month - now.day
     daily_budget = remaining_budget / remaining_days
 
+    
     summary_data = {
         'amount_by_category': amount_by_category,
         'total_spent': total_spent,
@@ -82,6 +95,9 @@ def summarize_expenses(expense_file_path, budget):
         'daily_budget': daily_budget
     }
     return summary_data
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
