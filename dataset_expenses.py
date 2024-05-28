@@ -9,6 +9,7 @@ studies_range = (20, 300)
 fun_range = (50, 1000)
 weird_stuff_range = (0, 1000)
 
+
 # Number of months (3 years)
 num_months = 12 * 3
 
