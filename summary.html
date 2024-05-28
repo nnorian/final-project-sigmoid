@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +17,20 @@
     <h2>Daily Budget: {{ summary.daily_budget }}</h2>
     <h3>Expenses by Category:</h3>
     <ul>
+
+        
         {% for category, amount in summary.amount_by_category.items() %}
         <li>{{ category }}: {{ amount }}</li>
         {% endfor %}
+
+        
     </ul>
     {% if budget_spent %}
     <p>Sigmoid recommends you to learn Python and Machine Learning :)</p>
     {% endif %}
     <p><a href="{{ url_for('home') }}">Home</a></p>
+    
 </body>
+
+    
 </html>
