@@ -1,8 +1,16 @@
 from flask import Flask, request, render_template, redirect, url_for
-from expense_v1 import Expense
 import calendar
 import datetime
 import csv
+
+class Expense:
+    def __init__(self, name, category, amount) -> None:
+        self.name = name
+        self.category = category
+        self.amount = amount
+
+    def __repr__(self):
+        return f'<Expense: {self.name}, {self.category}, greens{self.amount:.2f}>'
 
 app = Flask(__name__)
 
